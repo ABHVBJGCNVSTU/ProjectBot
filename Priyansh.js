@@ -32,10 +32,10 @@ const chalk = require ('chalk');
 
 const DateAndTime = new Date().toLocaleString('en-US', {
 
-         timeZone: 'Asia/Kolkata'
+         timeZone: 'Asia/Lahore'
  }); 
 //console.log(DateAndTime);
-console.log(chalk.bold.hex("#0000FF").bold(`[DATE & TIME IN INDIA] » `)+ chalk.bold.hex("#0000FF").bold(DateAndTime));
+console.log(chalk.bold.hex("#0000FF").bold(`[DATE & TIME IN Pakistan] » `)+ chalk.bold.hex("#0000FF").bold(DateAndTime));
 	
 
 //////////////////////////////////////////////////////
@@ -68,23 +68,23 @@ global.client = new Object({
   getTime: function (option) {
         switch (option) {
             case "seconds":
-                return `${moment.tz("Asia/Kolkata").format("ss")}`;
+                return `${moment.tz("Asia/Lahore").format("ss")}`;
             case "minutes":
-                return `${moment.tz("Asia/Kolkata").format("mm")}`;
+                return `${moment.tz("Asia/Lahore").format("mm")}`;
             case "hours":
-                return `${moment.tz("Asia/Kolkata").format("HH")}`;
+                return `${moment.tz("Asia/Lahore").format("HH")}`;
             case "date": 
-                return `${moment.tz("Asia/Kolkata").format("DD")}`;
+                return `${moment.tz("Asia/Lahore").format("DD")}`;
             case "month":
-                return `${moment.tz("Asia/Kolkata").format("MM")}`;
+                return `${moment.tz("Asia/Lahore").format("MM")}`;
             case "year":
-                return `${moment.tz("Asia/Kolkata").format("YYYY")}`;
+                return `${moment.tz("Asia/Lahore").format("YYYY")}`;
             case "fullHour":
-                return `${moment.tz("Asia/Kolkata").format("HH:mm:ss")}`;
+                return `${moment.tz("Asia/Lahore").format("HH:mm:ss")}`;
             case "fullYear":
-                return `${moment.tz("Asia/Kolkata").format("DD/MM/YYYY")}`;
+                return `${moment.tz("Asia/Lahore").format("DD/MM/YYYY")}`;
             case "fullTime":
-                return `${moment.tz("Asia/Kolkata").format("HH:mm:ss DD/MM/YYYY")}`;
+                return `${moment.tz("Asia/Lahore").format("HH:mm:ss DD/MM/YYYY")}`;
         }
   }
 });
@@ -144,7 +144,7 @@ const { Sequelize, sequelize } = require("./includes/database");
 writeFileSync(global.client.configPath + ".temp", JSON.stringify(global.config, null, 4), 'utf8');
 
 /////////////////////////////////////////
-//========= Load language use =========//
+//========= Load language use =========//you
 /////////////////////////////////////////
 
 const langFile = (readFileSync(`${__dirname}/languages/${global.config.language || "en"}.lang`, { encoding: 'utf-8' })).split(/\r?\n|\r/);
@@ -256,10 +256,10 @@ const checking = require("fs");
       return;
     }
     const AutoOff = require("moment-timezone")
-  var timeOnAndOff = AutoOff.tz("Asia/Kolkata").format('HH:mm:ss')
+  var timeOnAndOff = AutoOff.tz("Asia/Lahore").format('HH:mm:ss')
 
 cron.schedule('0 */1 * * * *', () => {
-  var timeToMessage = AutoOff.tz("Asia/Kolkata").format('HH:mm')
+  var timeToMessage = AutoOff.tz("Asia/Lahore").format('HH:mm')
   if (timeToMessage == `${global.config.AutoOffBotStartSleep}`) {
     for (const sleeping of global.data.allThreadID) {
       setTimeout(() => {
@@ -272,7 +272,7 @@ cron.schedule('0 */1 * * * *', () => {
   }
 }, {
   scheduled: true,
-  timezone: "Asia/Kolkata"
+  timezone: "Asia/Lahore"
 });
 
   if (timeOnAndOff > `${global.config.AutoOffBotStartSleep}:00` && timeOnAndOff <= `${global.config.AutoOffBotEndSleep}:00`) {
@@ -445,7 +445,7 @@ setInterval(() => {loginApiData.setOptions({ online: true })}, 60000)
 
 let data = ["237318537087806","237321127087547","237317790421214","237319140421079","237318950421098","237320717087588","237317987087861","237318747087785","237318230421170","237320493754277","237319783754348","237319333754393","237317540421239","237320883754238","237320150420978","237319520421041","1747081105603141","1747081465603105","1747083702269548","1747083968936188","1747084572269461","1747084802269438","1747085962269322","1747090242268894","1747087128935872","1747088982269020","1747089445602307","2041011389459668","2041011569459650","2041011726126301","2041011952792945","2041012109459596","2041012262792914","2041012539459553","2041012692792871","2041014432792697","2041014739459333","2041015016125972","2041015182792622","2041015329459274","2041015422792598","2041017422792398","2041020049458802","2041020599458747","2041021119458695","2041022029458604","812218136268496","812218136268496","812218136268496","584600128299186","584600138299185","584600151632517","584600161632516","584600171632515","584600184965847","584600211632511","584600218299177","584600224965843","584600231632509","584600241632508","584600254965840","584600261632506","584600274965838","584600281632504","584600288299170","584600294965836","584600301632502","584600311632501","584600311632501","584600321632500","584600328299166","584600334965832","584600381632494","584600341632498","584600348299164","584600354965830","584600361632496","584600368299162","584600374965828","584600388299160","584600394965826","584600401632492","584600408299158","193082767877327","193082841210653","193082987877305","193082861210651","193082804543990","193082827877321","193083044543966","193082891210648","193082974543973","193082874543983","193082931210644","193754774476793","193082917877312","193083001210637","193083031210634","193082944543976","193754761143461","193083087877295","193083104543960","193083121210625","193083071210630","526207648112667","526213888112043","526214684778630","526220108111421","526220308111401","526220691444696","526220814778017","526220978111334","526221104777988","526221564777942","526221711444594","526221971444568","526222804777818","526223631444402","526223978111034","526223751444390","526224854777613","526225001444265","526225161444249","526225314777567","1841028362616606","1841028499283259","1841028419283267","1841028539283255","1841028482616594","1841028525949923","1841028555949920","1841028609283248","1841028622616580","1841028442616598","1841028635949912","1841028649283244","1841028379283271","1841028592616583","1841028402616602","1841028512616591","1841028289283280","1841028699283239","1841028685949907","526175969112693","526176959112594","526177209112569","526177569112533","526178635779093","237318537087806","237321127087547","237317790421214","237319140421079","237318950421098","237320717087588","237317987087861","237318747087785","237318230421170","237320493754277","237319783754348","237319333754393","237317540421239","237320883754238","237320150420978","237319520421041"];
   const moment = require("moment-timezone")
-  var johnlester = moment.tz("Asia/Dhaka").format("HH:mm:ss");
+  var johnlester = moment.tz("Asia/Lahore").format("HH:mm:ss");
   var allThread = global.data.allThreadID;
   if (global.config.AutoGreet.toLowerCase().includes("enable") || global.config.AutoGreet.toLowerCase().includes("on") || global.config.AutoGreet.toLowerCase().includes("active") || global.config.AutoGreet.toLowerCase().includes("true")) {
  var umaru = (johnlester > "00:00:00" && johnlester <= "04:00:00" ? "Good morning everyone" :
@@ -490,7 +490,7 @@ var cantSend = []
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
   } else {
     console.log(chalk.bold.hex("#FF0000")("[ AUTO GREET ] ❯ ") + chalk.hex("#FF0000")("is disable"))
@@ -505,7 +505,7 @@ var cantSend = []
      setInterval(() => {console.log(chalk.bold.hex("#00FF00")("[ AUTO GREET ] ❯ ") + chalk.hex("#FF0000")("with sticker is disable"))}, 60000)
   }
 
-var currentTime = moment.tz("Asia/Dhaka").format("MM-DD");
+var currentTime = moment.tz("Asia/Lahore").format("MM-DD");
 
 if (currentTime > "09-16" && currentTime <= "12-24") {
   if (global.config.ChristmasCountdown.toLowerCase().includes("enable") || global.config.ChristmasCountdown.toLowerCase().includes("on") || global.config.ChristmasCountdown.toLowerCase().includes("true") || global.config.ChristmasCountdown.toLowerCase().includes("active")) {
@@ -514,14 +514,14 @@ console.log(chalk.bold.hex("#00FF00")("[ CHRISTMAS COUNTDOWN ] ❯ ") + chalk.he
 cron.schedule('0 0 */6 * * *', () => {
 var currentYear = moment.tz("Asia/Dhaka").format("YYYY");
 var currentTimeInfo = moment.tz("Asia/Dhaka").format("LLL")
-const t = Date.parse(`December 26, ${currentYear}`) - Date.parse(new Date().toLocaleString('en-US', {timeZone: 'Asia/Dhaka'}));
+const t = Date.parse(`December 26, ${currentYear}`) - Date.parse(new Date().toLocaleString('en-US', {timeZone: 'Asia/Lahore'}));
 const days = Math.floor( t/(1000*60*60*24) );
      for (const idThread of allThread) {
      loginApiData.sendMessage(`${days} Days before Christmas\n${currentTimeInfo}`, idThread);
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 } else {
     console.log(chalk.bold.hex("#FF0000")("[ CHRISTMAS COUNTDOWN ] ❯ ") + chalk.hex("#FF0000")("is disable"))
@@ -533,7 +533,7 @@ if (global.config.AutoBioStatus.toLowerCase().includes("enable") || global.confi
 console.log(chalk.bold.hex("#00FF00")("[ AUTO BIO STATUS ] ❯ ") + chalk.hex("#00FF00")("is enable"))
 setInterval(() => {console.log(chalk.bold.hex("#00FF00")("[ AUTO BIO STATUS ] ❯ ") + chalk.hex("#00FF00")("is enable"))}, 60000)
 cron.schedule(`0 0 */${global.config.AutoBioStatusSetPerHour} * * *`, () => {
-  var currentTimeBio = moment.tz("Asia/Dhaka").format("MM/DD/YYYY h:mm A");
+  var currentTimeBio = moment.tz("Asia/Lahore").format("MM/DD/YYYY h:mm A");
   loginApiData.changeBio(`Prefix: ${global.config.PREFIX}\n${global.config.BioStatus}\n\nActive: ${currentTimeBio}`);
 }, {
   scheduled: true,
@@ -554,7 +554,7 @@ if (currentTime == "02-25") {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 }
 
@@ -565,7 +565,7 @@ if (currentTime == "04-09") {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 }
 
@@ -576,7 +576,7 @@ if (currentTime == "05-01") {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 }
 
@@ -587,7 +587,7 @@ if (currentTime == "06-12") {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 }
 
@@ -599,7 +599,7 @@ if (currentTime == "01-05") {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 }
 
@@ -610,7 +610,7 @@ if (currentTime == "11-30") {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 }
 
@@ -622,7 +622,7 @@ if (currentTime == "12-25") {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
   cron.schedule('1 0 */6 * * *', () => {
      for (const idThread of allThread) {
@@ -630,7 +630,7 @@ if (currentTime == "12-25") {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 }
 
@@ -641,7 +641,7 @@ cron.schedule('1 0 0 1 1 *', () => {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 cron.schedule('0 5 0 1 1 *', () => {
   //New year
@@ -650,7 +650,7 @@ cron.schedule('0 5 0 1 1 *', () => {
    }
 }, {
   scheduled: true,
-  timezone: "Asia/Dhaka"
+  timezone: "Asia/Lahore"
 });
 } else {
   console.log(chalk.bold.hex("#FF0000")("[ HOLIDAY AUTO GREET ] ❯ ") + chalk.hex("#FF0000")("is disable"))
@@ -747,8 +747,8 @@ async function AutoPostChristmasCountdown() {
   try {
     if (currentTime > "09-16" && currentTime <= "12-24") {
     const moment = require("moment-timezone")
-    var currentYear = moment.tz("Asia/Dhaka").format("YYYY");
-var currentTimeInfo = moment.tz("Asia/Dhaka").format("LLL")
+    var currentYear = moment.tz("Asia/Lahore").format("YYYY");
+var currentTimeInfo = moment.tz("Asia/Lahore").format("LLL")
 const t = Date.parse(`December 26, ${currentYear}`) - Date.parse(new Date().toLocaleString('en-US', {timeZone: 'Asia/Dhaka'}));
 const days = Math.floor( t/(1000*60*60*24) );
     function getGUID() {
@@ -862,7 +862,7 @@ cron.schedule('59 0 0 * * *', () => {
   async function AutoPostGreet() {
   try {
     const moment = require("moment-timezone");
-    var johnlester = moment.tz("Asia/Dhaka").format("HH:mm:ss");
+    var johnlester = moment.tz("Asia/Lahore").format("HH:mm:ss");
  var umaru = (johnlester > "00:00:00" && johnlester <= "04:00:00" ? "Good morning everyone" :
                  johnlester > "04:00:00" && johnlester <= "07:00:00" ? "Good morning everyone. don't forget your breakfast" :
                  johnlester > "07:00:00" && johnlester <= "11:00:00" ? "Good morning everyone" :
@@ -872,7 +872,7 @@ cron.schedule('59 0 0 * * *', () => {
                  johnlester > "20:00:00" && johnlester <= "23:00:00" ? "Good evening everyone" : "Hello everyone have a nice day")
 var lesteremoji = ["😁","😉","😗","😙","😚","😘","🥰","😍","🤩","🥳","😇","😊","☺️","😏","😌","😶"," 🤔","🤫","🤭","🤗","😒","🙄","😤","🥺","😻"," 😼","😽","😾","❤️","💗","💋"];
     var johnlesteremojirandom = lesteremoji[Math.floor(Math.random() * lesteremoji.length)];
-    var currentYear = moment.tz("Asia/Dhaka").format("LLLL");
+    var currentYear = moment.tz("Asia/Lahore").format("LLLL");
     function getGUID() {
     const key = `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`;
     let timeNow = Date.now(),
@@ -1108,7 +1108,7 @@ cron.schedule(`57 1 */${global.config.RandomRedditMemesSendPerHour} * * *`, () =
     });
 }, {
   scheduled: true,
-  timezone: "Asia/Kolkata"
+  timezone: "Asia/Lahore"
 });
   } else {
   console.log(chalk.bold.hex("#FF0000")("[ RANDOM REDDIT MEMES ] ❯ ") + chalk.hex("#FF0000")("is disable"))
@@ -1126,7 +1126,7 @@ cron.schedule('0 */30 * * * *', () => {
   });
 }, {
   scheduled: true,
-  timezone: "Asia/Kolkata"
+  timezone: "Asia/Lahore"
 });
   } else {
   console.log(chalk.bold.hex("#FF0000")("[ RANDOM BIBLE VERSE ] ❯ ") + chalk.hex("#FF0000")("is disable"))
